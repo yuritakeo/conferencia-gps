@@ -15,7 +15,9 @@ import javafx.stage.Stage;
  *
  * @author yuri.miyazaki
  */
-public class ConferenciaGps extends Application {
+public class Main extends Application {
+
+    private static Scene mainScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -25,10 +27,14 @@ public class ConferenciaGps extends Application {
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
 
-        Scene mainScene = new Scene(scrollPane);
+        mainScene = new Scene(scrollPane);
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Conferencia GPS");
         primaryStage.show();
+    }
+
+    public static Scene getMainScene() {
+        return mainScene;
     }
 
     /**
